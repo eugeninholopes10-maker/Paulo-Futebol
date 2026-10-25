@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraPharma Excellence | Farmácia Premium & Saúde</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="script" href="script.js">
+
+</head>
+<body>
+
+  <!-- TOP BAR INFO -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-truck-fast"></i> Entrega Expressa em até 45 minutos</span>
+        <span><i class="fa-solid fa-clock"></i> Atendimento 24h via WhatsApp</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Medicamentos 100% Garantidos</span>
+      </div>
+      <div class="top-links">
+        <a href="#unidades"><i class="fa-solid fa-location-dot"></i> Nossas Lojas</a>
+        <a href="https://wa.me/5511999999999" target="_blank"><i class="fa-brands fa-whatsapp"></i> Fale Conosco</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER PRINCIPAL -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+        <div class="logo-text">
+          <span class="brand-name">AURA<span>PHARMA</span></span>
+          <span class="brand-tagline">EXCELLENCE & HEALTH</span>
+        </div>
+      </a>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Busque por remédios, dermocosméticos, vitaminas...">
+        <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="#receita" class="action-btn prescription-btn">
+          <i class="fa-solid fa-file-prescription"></i>
+          <span>Enviar Receita</span>
+        </a>
+        <button class="cart-trigger" id="cartTrigger">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="nav-bar">
+    <div class="container nav-container">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#receita">Enviar Receita</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <i class="fa-solid fa-phone-volume"></i> Tele-Entrega: <strong>0800 777 8888</strong>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-star"></i> Farmácia de Alto Padrão</span>
+      <h1>Sua Saúde Tratada com a <span>Elegância e Cuidado</span> que Você Merece.</h1>
+      <p>Entregamos medicamentos, suplementos importados e dermocosméticos de luxo diretamente na sua porta com total segurança e agilidade.</p>
+      
+      <div class="hero-btns">
+        <a href="#produtos" class="btn btn-gold"><i class="fa-solid fa-store"></i> Ver Catálogo de Produtos</a>
+        <a href="#receita" class="btn btn-outline"><i class="fa-solid fa-file-medical"></i> Pedir por Foto da Receita</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <strong>+50 mil</strong>
+          <span>Clientes Atendidos</span>
+        </div>
+        <div class="stat-item">
+          <strong>45 min</strong>
+          <span>Tempo Médio de Entrega</span>
+        </div>
+        <div class="stat-item">
+          <strong>100%</strong>
+          <span>Origem Certificada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS EM DESTAQUE -->
+  <section class="section categories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Navegue por Categoria</span>
+        <h2 class="section-title">O que você está procurando hoje?</h2>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card" onclick="filterCategory('Medicamentos')">
+          <div class="category-icon"><i class="fa-solid fa-pills"></i></div>
+          <h3>Medicamentos</h3>
+          <p>Genéricos, Contínuos e Especiais</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('Dermocosméticos')">
+          <div class="category-icon"><i class="fa-solid fa-sparkles"></i></div>
+          <h3>Dermocosméticos</h3>
+          <p>Skincare de Alta Performance</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('Suplementos')">
+          <div class="category-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3>Suplementos & Vitaminas</h3>
+          <p>Saúde, Imunidade e Performance</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('Higiene')">
+          <div class="category-icon"><i class="fa-solid fa-pump-soap"></i></div>
+          <h3>Cuidados Pessoais</h3>
+          <p>Higiene, Cabelos e Banho Luxo</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('Infantil')">
+          <div class="category-icon"><i class="fa-solid fa-baby"></i></div>
+          <h3>Mãe e Bebê</h3>
+          <p>Fórmulas, Fraldas e Cuidados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE PRODUTOS / E-COMMERCE -->
+  <section id="produtos" class="section products-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Catálogo Exclusivo</span>
+        <h2 class="section-title">Produtos em Destaque</h2>
+        <p class="section-desc">Selecione os produtos desejados e adicione ao seu carrinho para enviar direto pelo WhatsApp.</p>
+      </div>
+
+      <!-- Filtros de Produtos -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-category="Todos">Todos os Produtos</button>
+        <button class="filter-btn" data-category="Medicamentos">Medicamentos</button>
+        <button class="filter-btn" data-category="Dermocosméticos">Dermocosméticos</button>
+        <button class="filter-btn" data-category="Suplementos">Suplementos & Vitaminas</button>
+        <button class="filter-btn" data-category="Higiene">Cuidados Pessoais</button>
+        <button class="filter-btn" data-category="Infantil">Mãe e Bebê</button>
+      </div>
+
+      <!-- Grid de Produtos -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE ENVIO DE RECEITA -->
+  <section id="receita" class="section prescription-section">
+    <div class="container prescription-container">
+      <div class="prescription-text">
+        <span class="badge-gold"><i class="fa-solid fa-bolt"></i> Praticidade Total</span>
+        <h2>Tem uma Receita Médica? Nós Resolvemos para Você!</h2>
+        <p>Envie a foto da sua receita prescrita pelo seu médico. Nossa equipe de farmacêuticos qualificados fará o orçamento imediato e enviará os medicamentos diretamente na sua casa.</p>
+
+        <ul class="prescription-steps">
+          <li>
+            <div class="step-num">1</div>
+            <div>
+              <strong>Tire uma foto legível</strong>
+              <p>Certifique-se que o nome do remédio e CRM médica estão visíveis.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div>
+              <strong>Anexe no campo ao lado</strong>
+              <p>Ou envie diretamente para nosso número oficial do WhatsApp.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div>
+              <strong>Receba em Minutos</strong>
+              <p>Confirmamos o valor e enviamos o entregador com máquina de cartão/PIX.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="prescription-card">
+        <h3><i class="fa-solid fa-cloud-arrow-up"></i> Cotar Receita Agora</h3>
+        <form id="prescriptionForm" onsubmit="handlePrescriptionSubmit(event)">
+          <div class="form-group">
+            <label for="pName">Seu Nome Completo</label>
+            <input type="text" id="pName" placeholder="Ex: Dr. Roberto Silva" required>
+          </div>
+          <div class="form-group">
+            <label for="pPhone">Seu WhatsApp</label>
+            <input type="tel" id="pPhone" placeholder="(11) 99999-9999" required>
+          </div>
+          <div class="form-group">
+            <label for="pObs">Observações ou Dúvidas</label>
+            <textarea id="pObs" rows="3" placeholder="Ex: Preciso também de uma caixa de dipirona e entrega para hoje às 18h."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Foto da Receita (Opcional no formulário)</label>
+            <div class="file-dropzone" id="dropzone">
+              <i class="fa-solid fa-camera"></i>
+              <span>Clique aqui para selecionar a foto da receita</span>
+              <input type="file" id="pFile" accept="image/*,.pdf" style="display:none;">
+              <small id="fileNameDisplay"></small>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-whatsapp-full">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Receita no WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS DA FARMÁCIA -->
+  <section id="diferenciais" class="section features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Por que escolher a AuraPharma</span>
+        <h2 class="section-title">Excelência em Cada Detalhe</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Delivery Ultra Rápido</h3>
+          <p>Sistema inteligente de entregas para que seu tratamento não seja interrompido. Entregas expressas em até 45 min.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <h3>Atenção Farmacêutica 24h</h3>
+          <p>Farmacêuticos de plantão em tempo integral para tirar suas dúvidas sobre dosagens e interações medicamentosas.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3>Procedência 100% Garantida</h3>
+          <p>Trabalhamos exclusivamente com laboratórios e marcas de renome internacional com rígido controle de temperatura.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+          <h3>Programa Aura Club</h3>
+          <p>Acumule pontos em cada compra e troque por descontos exclusivos em dermocosméticos e produtos selecionados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSSAS UNIDADES -->
+  <section id="unidades" class="section units-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Onde Estamos</span>
+        <h2 class="section-title">Nossas Unidades Físicas</h2>
+        <p class="section-desc">Lojas projetadas para oferecer o máximo de conforto, discrição e atendimento VIP.</p>
+      </div>
+
+      <div class="units-grid">
+        <div class="unit-card">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=600&q=80" alt="Unidade Jardins">
+          </div>
+          <div class="unit-info">
+            <h3>Unidade Jardins - Flagship</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Av. das Magnólias, 1200 - Jardins, São Paulo - SP</p>
+            <p><i class="fa-solid fa-clock"></i> Horário: 24 Horas (Todos os dias)</p>
+            <p><i class="fa-solid fa-phone"></i> (11) 3000-8888</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-unit-map"><i class="fa-solid fa-map-location-dot"></i> Como Chegar</a>
+          </div>
+        </div>
+
+        <div class="unit-card">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=600&q=80" alt="Unidade Alphaville">
+          </div>
+          <div class="unit-info">
+            <h3>Unidade Alphaville</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Alameda Rio Negro, 500 - Alphaville, Barueri - SP</p>
+            <p><i class="fa-solid fa-clock"></i> Horário: Seg a Sáb das 06h às 00h</p>
+            <p><i class="fa-solid fa-phone"></i> (11) 3000-9999</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-unit-map"><i class="fa-solid fa-map-location-dot"></i> Como Chegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / RODAPÉ -->
+  <footer class="footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo footer-logo">
+          <div class="logo-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+          <div class="logo-text">
+            <span class="brand-name">AURA<span>PHARMA</span></span>
+            <span class="brand-tagline">EXCELLENCE & HEALTH</span>
+          </div>
+        </div>
+        <p class="footer-about">
+          A AuraPharma é referência nacional em manipulação, medicamentos especiais, suplementação avançada e dermocosméticos de luxo.
+        </p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação Rápida</h4>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#produtos">Produtos em Destaque</a></li>
+          <li><a href="#receita">Enviar Receita Médica</a></li>
+          <li><a href="#unidades">Nossas Lojas</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categorias Populares</h4>
+        <ul>
+          <li><a href="#produtos">Dermocosméticos Importados</a></li>
+          <li><a href="#produtos">Vitaminas & Imunidade</a></li>
+          <li><a href="#produtos">Medicamentos Contínuos</a></li>
+          <li><a href="#produtos">Higiene & Cuidados Pessoais</a></li>
+          <li><a href="#produtos">Linha Infantil & Bebês</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento Exclusivo</h4>
+        <p><i class="fa-solid fa-phone"></i> Central: 0800 777 8888</p>
+        <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: (11) 99999-9999</p>
+        <p><i class="fa-solid fa-envelope"></i> contato@aurapharma.com.br</p>
+        <p><i class="fa-solid fa-shield"></i> CRF/SP Nº 45.892 | Farmacêutico Resp.: Dr. A. Silva</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 AuraPharma Excellence. Todos os direitos reservados.</p>
+        <div class="payment-methods">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+          <i class="fa-solid fa-barcode"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SIDEBAR DO CARRINHO DE COMPRAS -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-bag-shopping"></i> Seu Carrinho (<span id="cartCount">0</span>)</h3>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <!-- Itens adicionados dinamicamente via JS -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <p class="cart-note">* O valor final pode ser confirmado pelo farmacêutico com descontos convênio.</p>
+      <button class="btn btn-whatsapp-full" onclick="checkoutWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- BOTÃO FLUTUANTE FIXO DO WHATSAPP -->
+  <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20tirar%20uma%20dúvida." target="_blank" class="whatsapp-float" title="Fale com nosso Farmacêutico no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Script JS Interno -->
+  <script src="script.js"></script>
+</body>
+</html>
